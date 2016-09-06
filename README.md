@@ -1,8 +1,8 @@
 # capsule.io
-A Go library &amp; tool for helping you manage private information within code. 
 
 [![construction](https://img.shields.io/badge/construction-in--progress-yellow.svg)](https://github.com/Digitalblueeye/capsule.io)
 
+A Go library &amp; tool for helping you manage private information within code. 
 
 ##Usage
 
