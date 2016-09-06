@@ -1,13 +1,42 @@
 # capsule.io
 
-[![build](https://img.shields.io/badge/construction-in--progress-yellow.svg)](https://github.com/Digitalblueeye/capsule.io)
-
 A Go library &amp; tool for helping you manage private information within code. 
 
 ##Usage
 
+Here is an example capsule file
 ```
-//Example coming soon!
+key=value
+oranges=a sweet orange fruit
+foo=bar
+
+```
+
+***
+
+```Go
+package main
+
+import (
+	"github.com/Digitalblueeye/capsule.io"
+	"fmt"
+)
+
+func main() {
+	/* 
+
+	Since I didn't specify a capsule, capsuleio.Get() will use the first .capsule file found in the local directory
+	If I would like to specify a capsule, I would need to use
+
+	capsuleio.Open("mycapsulefile.capsule")
+
+	*/
+
+	fmt.Println(capsuleio.Get("key")) //prints value
+
+
+}
+
 ```
 
 ##Installation
