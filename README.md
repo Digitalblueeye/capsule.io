@@ -1,6 +1,9 @@
 # capsule.io
 A Go library &amp; tool for helping you manage private information within code. 
 
+[![construct](https://img.shields.io/badge/construction-in--progress-yellow.svg)]()
+
+
 ##Usage
 
 ```
