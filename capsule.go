@@ -1,9 +1,9 @@
 package capsuleio
 
 import (
+	"fmt"
 	"io/ioutil"
-	"path/filepath"
-	"runtime"
+	"os"
 	"strings"
 )
 
@@ -23,15 +23,17 @@ func Open(capsule string) {
 func Get(key string) string {
 	if len(storage) < 1 {
 		//load local file from directory
-		_, b, _, _ := runtime.Caller(0)
-		basepath := filepath.Dir(b)
 		storage = make(map[string]string)
+
+		basepath, _ := os.Getwd()
 
 		fileinfo, _ := ioutil.ReadDir(basepath)
 		for _, file := range fileinfo {
 			if !file.IsDir() && strings.Contains(file.Name(), ".capsule") {
+				fmt.Println(basepath + "/" + file.Name())
 				File, _ := ioutil.ReadFile(basepath + "/" + file.Name())
 				source = string(File)
+				break
 			}
 		}
 		load()
