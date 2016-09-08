@@ -8,10 +8,8 @@ import (
 )
 
 var (
-	storage    map[string]string
-	source     string
-	_, b, _, _ = runtime.Caller(0)
-	basepath   = filepath.Dir(b)
+	storage map[string]string
+	source  string
 )
 
 //Sets the source file for the key value store (aka the capsule)
@@ -25,24 +23,23 @@ func Open(capsule string) {
 func Get(key string) string {
 	if len(storage) < 1 {
 		//load local file from directory
+		_, b, _, _ := runtime.Caller(0)
+		basepath := filepath.Dir(b)
+		storage = make(map[string]string)
+
+		fileinfo, _ := ioutil.ReadDir(basepath)
+		for _, file := range fileinfo {
+			if !file.IsDir() && strings.Contains(file.Name(), ".capsule") {
+				File, _ := ioutil.ReadFile(basepath + "/" + file.Name())
+				source = string(File)
+			}
+		}
 		load()
 		return storage[key]
 	} else {
 		return storage[key]
 	}
 	return "Missing a capsule file? Incorrect formatting?"
-}
-
-func init() {
-	storage = make(map[string]string)
-
-	fileinfo, _ := ioutil.ReadDir(basepath)
-	for _, file := range fileinfo {
-		if !file.IsDir() && strings.Contains(file.Name(), ".capsule") {
-			File, _ := ioutil.ReadFile(basepath + "/" + file.Name())
-			source = string(File)
-		}
-	}
 }
 
 func load() {
