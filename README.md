@@ -21,7 +21,7 @@ foo=bar
 package main
 
 import (
-	"github.com/Digitalblueeye/capsule.io"
+	"github.com/archit3cture/capsule.io"
 	"fmt"
 )
 
