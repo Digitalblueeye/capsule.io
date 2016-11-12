@@ -30,7 +30,7 @@ func Get(key string) string {
 		fileinfo, _ := ioutil.ReadDir(basepath)
 		for _, file := range fileinfo {
 			if !file.IsDir() && strings.Contains(file.Name(), ".capsule") {
-				fmt.Println(basepath + "/" + file.Name())
+				//fmt.Println(basepath + "/" + file.Name())
 				File, _ := ioutil.ReadFile(basepath + "/" + file.Name())
 				source = string(File)
 				break
