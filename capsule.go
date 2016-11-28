@@ -1,7 +1,7 @@
 package capsuleio
 
 import (
-	"fmt"
+	// "fmt"
 	"io/ioutil"
 	"os"
 	"strings"
