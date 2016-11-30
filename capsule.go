@@ -13,6 +13,10 @@ var (
 	source  string
 )
 
+func init() {
+	storage = make(map[string]string)
+}
+
 //Sets the source file for the key value store (aka the capsule)
 func Open(capsule string) {
 	File, _ := ioutil.ReadFile(capsule)
@@ -24,7 +28,6 @@ func Open(capsule string) {
 func Get(key string) string {
 	if len(storage) < 1 {
 		//load local file from directory
-		storage = make(map[string]string)
 
 		basepath, _ := os.Getwd()
 
