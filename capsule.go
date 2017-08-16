@@ -1,8 +1,6 @@
 package capsuleio
 
 import (
-
-	// "fmt"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -27,8 +25,8 @@ func Open(capsule string) {
 //Gets the string value from the current capsule
 func Get(key string) string {
 	if len(storage) < 1 {
+		
 		//load local file from directory
-
 		basepath, _ := os.Getwd()
 
 		fileinfo, _ := ioutil.ReadDir(basepath)
