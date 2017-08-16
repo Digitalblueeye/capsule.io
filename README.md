@@ -2,10 +2,9 @@
 
 [![godoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/rucuriousyet/capsule.io)
 
-A Go library &amp; tool for helping you manage private information within code. 
-Notice: this library is meant to function as a development tool for those who post code in a remote or publicly viewed repo. Capsule.io is not intended to be used in final products or builds. 
+The little library for fetching application secrets!
 
-Capsule.io was inspired by some functions in Laravel (PHP) and is extremely simple.
+Notice: this library is meant to function as a development tool for those who post code in a remote or publicly viewed repo. Capsule.io is not intended to be used in final products or builds. 
 
 ## Usage
 
