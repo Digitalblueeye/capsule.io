@@ -11,7 +11,7 @@ Notice: this library is meant to function as a development tool for those who po
 Here is an example capsule file
 ```
 key=value
-oranges=a sweet orange fruit
+orange=a sweet orange fruit
 foo=bar
 
 ```
@@ -22,21 +22,21 @@ foo=bar
 package main
 
 import (
-	"github.com/rucuriousyet/capsule.io"
-	"fmt"
+  "fmt"
+
+  "github.com/rucuriousyet/capsule.io"
 )
 
 func main() {
 	/* 
+	  Since no file was specified, capsuleio.Get() will look in the project directory 
+	  for a *.capsule file. If you would like to specify a file to use, add the following
+	  line before any calls to Get().
 
-	Since I didn't specify a capsule, capsuleio.Get() will use the first .capsule file found in the local directory
-	If I would like to specify a capsule, I would need to use
-
-	capsuleio.Open("mycapsulefile.capsule")
-
+	  capsuleio.Open("mycapsulefile.capsule")
 	*/
 
-	fmt.Println(capsuleio.Get("key")) //prints value
+	fmt.Println(capsuleio.Get("key")) //=> value
 
 
 }
@@ -48,4 +48,4 @@ func main() {
 go get github.com/rucuriousyet/capsule.io
 ```
 
-Thanks for using Capsule! Please let me know if you have any questions, issues or simply want to request a new feature!
+Thanks for using Capsule! Feel free to reach out with questions, feature requests and more!
