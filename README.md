@@ -28,17 +28,15 @@ import (
 )
 
 func main() {
-	/* 
-	  Since no file was specified, capsuleio.Get() will look in the project directory 
-	  for a *.capsule file. If you would like to specify a file to use, add the following
-	  line before any calls to Get().
+  /* 
+    Since no file was specified, capsuleio.Get() will look in the project directory 
+    for a *.capsule file. If you would like to specify a file to use, add the following
+    line before any calls to Get().
 
-	  capsuleio.Open("mycapsulefile.capsule")
-	*/
+    capsuleio.Open("mycapsulefile.capsule")
+  */
 
-	fmt.Println(capsuleio.Get("key")) //=> value
-
-
+  fmt.Println(capsuleio.Get("key")) //=> value
 }
 
 ```
