@@ -25,25 +25,24 @@ func Open(capsule string) {
 //Gets the string value from the current capsule
 func Get(key string) string {
 	if len(storage) < 1 {
-		
 		//load local file from directory
 		basepath, _ := os.Getwd()
 
 		fileinfo, _ := ioutil.ReadDir(basepath)
 		for _, file := range fileinfo {
 			if !file.IsDir() && strings.Contains(file.Name(), ".capsule") {
-				//fmt.Println(basepath + "/" + file.Name())
 				File, _ := ioutil.ReadFile(basepath + "/" + file.Name())
 				source = string(File)
+				
 				break
 			}
 		}
+		
 		load()
 		return storage[key]
-	} else {
-		return storage[key]
 	}
-	return "Missing a capsule file? Incorrect formatting?"
+	
+	return storage[key]
 }
 
 func load() {
