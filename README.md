@@ -24,7 +24,7 @@ package main
 import (
   "fmt"
 
-  "github.com/rucuriousyet/capsule.io"
+  caps "github.com/rucuriousyet/capsule.io"
 )
 
 func main() {
@@ -33,10 +33,10 @@ func main() {
     for a *.capsule file. If you would like to specify a file to use, add the following
     line before any calls to Get().
 
-    capsuleio.Open("mycapsulefile.capsule")
+    caps.Open("mycapsulefile.capsule")
   */
 
-  fmt.Println(capsuleio.Get("key")) //=> value
+  fmt.Println(caps.Get("key")) //=> value
 }
 
 ```
