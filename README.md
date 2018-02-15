@@ -4,8 +4,6 @@
 
 The little library for fetching application secrets!
 
-Notice: this library is meant to function as a development tool for those who post code in a remote or publicly viewed repo. Capsule.io is not intended to be used in final products or builds. 
-
 ## Usage
 
 Here is an example capsule file
